@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Legal Insight</title>
+  <link rel="stylesheet" href="static/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Legal Document Upload</h1>
+    
+    <!-- File Upload Form -->
+    <form id="upload-form">
+      <div class="form-group">
+        <label for="file-input">Select a legal document (PDF, DOCX):</label>
+        <input type="file" id="file-input" name="file" accept=".pdf,.docx" required>
+      </div>
+
+      <!-- Drag and Drop Area -->
+      <div id="drop-area" class="drop-area">
+        <p>Drag and drop your file here or click to select one</p>
+      </div>
+
+      <button type="submit">Upload Document</button>
+    </form>
+
+    <!-- File Info and Upload Progress -->
+    <div id="file-info" class="file-info"></div>
+    <div id="upload-progress" class="progress" style="display: none;">
+      <div id="progress-bar"></div>
+    </div>
+
+    <!-- Results Display -->
+    <div id="results" class="results"></div>
+  </div>
+
+  <script src="static/script.js"></script>
+</body>
+
+</html>
