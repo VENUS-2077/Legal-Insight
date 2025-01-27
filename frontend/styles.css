@@ -5,7 +5,6 @@ body, html {
   box-sizing: border-box;
   font-family: Arial, sans-serif;
 }
-
 /* Header */
 .header {
   display: flex;
@@ -13,7 +12,7 @@ body, html {
   align-items: center;
   background-color: black;
   color: white;
-  padding: 15px 20px;
+  padding: 20px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -21,27 +20,26 @@ body, html {
 .header .logo {
   font-size: 1.5rem;
   font-weight: bold;
+  padding-left: 5%;
 }
 .navbar a {
   color: white;
-  margin: 0 10px;
+  margin: 0 20px;
   display: inline-block;
   text-decoration: none;
 }
 .github-button {
   width: 30px;
   height: 30px;
-  background: black;
   border-radius: 50%;
   display: inline-block;
   margin-left: 10px;
   outline-color: white;
+  padding-right: 5%;
 }
-
 /* Hero Section */
 .hero {
   display: flex;
-  align-items: center;
   padding: 50px 20px;
   background: linear-gradient(black, white);
 }
@@ -53,33 +51,26 @@ body, html {
   height: 100%;
   border-radius: 15px;
 }
-
 /* Sections */
 section {
   text-align: center;
-  align-items: center;
   padding: 50px 20px;
 }
 .how-it-works {
   text-align: center;
-  align-items: center;
   background-color: white;
 }
 .accelerate-analysis {
   text-align: center;
-  align-items: center;
   background: linear-gradient(white, #F2CA2C);
 }
 .features {
   text-align: center;
-  align-items: center;
-  background: linear-gradient( #F2CA2C, white);
+  background: linear-gradient(#F2CA2C, white);
 }
 .transform-workflow {
   text-align: center;
-  align-items: center;
   background-color: #F2CA2C;
-  text-align: center;
 }
 footer {
   color: white;
