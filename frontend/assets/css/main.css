@@ -22,7 +22,8 @@
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #556270; /* Color for headings, subheadings and title throughout the website */
-  --specific-heading-color: #ffffff; /* Color for specific headings */
+  --specific-heading-color: #ffffff; /* Color for headings, subheadings and title throughout the website */
+  --linear-gradient: linear-gradient(to right, #F2CA2C, #FF00FF); /* Linear gradient used for buttons, links, and other elements that need to stand out */
   --accent-color: #d9232d; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
@@ -78,10 +79,28 @@ a:hover {
   text-decoration: none;
 }
 
-.h1.sitename {
-  color: white;
+.sitename {
   font-family: var(--heading-font);
   font-weight: 700;
+  background: linear-gradient(to right, #F2CA2C, #FF00FF);
+  background-size: 200% auto; /* Ensures the gradient spans more than the text width */
+  background-position: left center;
+  -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
+  color: transparent; /* Text color will be transparent to show gradient */
+  animation: gradientMove 3s linear infinite; /* Animation for the moving gradient */
+  display: inline-block; /* To ensure the text width is auto-calculated */
+  width: 100%;
+  display: inline-block;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: left center;
+  }
+  100% {
+    background-position: right center;
+  }
 }
 
 h1,
@@ -170,15 +189,21 @@ h6 {
   font-size: 28px;
   margin: 0;
   font-weight: 700;
-  color: var(--heading-color);
+  color: var(--linear-gradient);
+  accent-color: var(--linear-gradient);
   text-transform: uppercase;
+  background: linear-gradient(to right, #F2CA2C, #FF00FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }
 
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
-  color: black;
-  background: var(--specific-heading-color);
-  font-weight: bold;
+  color: rgb(255, 255, 255);
+  background-color: #232527 ;
+  font-weight: bolder;
   font-size: 14px;
   padding: 8px 25px;
   margin: 0 0 0 30px;
@@ -188,7 +213,7 @@ h6 {
 
 .header .btn-getstarted:hover,
 .header .btn-getstarted:focus:hover {
-  color: linear-gradient(to right, #ff00ff, #F2CA2C);
+  color: black;
   background: linear-gradient(to right, #F2CA2C, #ff00ff);
 }
 
@@ -467,7 +492,7 @@ h6 {
 --------------------------------------------------------------*/
 .footer {
   color: var(--default-color);
-  background-color: var(--background-color);
+  background-color: black;
   font-size: 14px;
   position: relative;
 }
@@ -478,30 +503,19 @@ h6 {
 }
 
 .footer .footer-about .logo {
-  line-height: 1;
   margin-bottom: 25px;
-}
-
-.footer .footer-about .logo img {
-  max-height: 40px;
-  margin-right: 6px;
-}
-
-.footer .footer-about .logo span {
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 1px;
-  font-family: var(--heading-font);
   color: var(--heading-color);
 }
 
 .footer .footer-about p {
   font-size: 14px;
-  font-family: var(--heading-font);
 }
 
 .footer .social-links a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 40px;
@@ -519,37 +533,23 @@ h6 {
   border-color: var(--accent-color);
 }
 
-.footer h4 {
-  font-size: 16px;
-  font-weight: bold;
-  position: relative;
-  padding-bottom: 12px;
-}
-
 .footer .footer-links {
   margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the links */
+  padding: 0;
 }
 
 .footer .footer-links ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.footer .footer-links ul i {
-  padding-right: 2px;
-  font-size: 12px;
-  line-height: 0;
+  text-align: center;
 }
 
 .footer .footer-links ul li {
   padding: 10px 0;
-  display: flex;
-  align-items: center;
-}
-
-.footer .footer-links ul li:first-child {
-  padding-top: 0;
 }
 
 .footer .footer-links ul a {
@@ -562,60 +562,9 @@ h6 {
   color: var(--accent-color);
 }
 
-.footer .footer-contact p {
-  margin-bottom: 5px;
-}
-
-.footer .footer-newsletter .newsletter-form {
-  margin-top: 30px;
-  margin-bottom: 15px;
-  padding: 6px 8px;
-  position: relative;
-  border-radius: 4px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
-  display: flex;
-  background-color: var(--surface-color);
-  transition: 0.3s;
-}
-
-.footer .footer-newsletter .newsletter-form:focus-within {
-  border-color: var(--accent-color);
-}
-
-.footer .footer-newsletter .newsletter-form input[type=email] {
-  border: 0;
-  padding: 4px;
-  width: 100%;
-  background-color: var(--surface-color);
-  color: var(--default-color);
-}
-
-.footer .footer-newsletter .newsletter-form input[type=email]:focus-visible {
-  outline: none;
-}
-
-.footer .footer-newsletter .newsletter-form input[type=submit] {
-  border: 0;
-  font-size: 16px;
-  padding: 0 20px;
-  margin: -7px -9px -7px 0;
-  background: var(--accent-color);
-  color: var(--contrast-color);
-  transition: 0.3s;
-  border-radius: 0 4px 4px 0;
-}
-
-.footer .footer-newsletter .newsletter-form input[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
 .footer .copyright {
   padding: 25px 0;
   border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.footer .copyright p {
-  margin-bottom: 0;
 }
 
 .footer .credits {
@@ -623,6 +572,17 @@ h6 {
   font-size: 13px;
 }
 
+.footer-github-button {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+
+.footer-github-icon {
+  width: 100%;
+  height: auto;
+  transition: 0.3s ease-in-out;
+}
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -661,6 +621,7 @@ h6 {
 /*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/
+
 .scroll-top {
   position: fixed;
   visibility: hidden;
@@ -668,22 +629,29 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  background-color: black; /* Default background is black */
   width: 40px;
   height: 40px;
   border-radius: 4px;
-  transition: all 0.4s;
+  transition: background-color 0.4s ease, opacity 0.4s, border 0.4s ease; /* Add transition for border */
+  border: 2px linear-gradient(to right, #F2CA2C, #FF00FF); /* Gradient border for the icon */
 }
 
 .scroll-top i {
   font-size: 24px;
-  color: var(--contrast-color);
+  color: white; /* Icon color on default state */
   line-height: 0;
+  transition: color 0.4s ease; /* Smooth transition for icon color */
+  border: 2px solid transparent; /* Default transparent border */
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  color: var(--contrast-color);
+  background: linear-gradient(to right, #F2CA2C, #FF00FF); /* Gradient on hover */
+  border: 2px solid black; /* Black border on hover */
+}
+
+.scroll-top:hover i {
+  color: black; /* Icon turns black on hover */
 }
 
 .scroll-top.active {
@@ -786,7 +754,7 @@ section,
 }
 
 .section-title p {
-  color: var(--heading-color);
+  color: white;
   margin: 0;
   font-size: 28px;
   font-weight: 700;
@@ -798,171 +766,239 @@ section,
 # Hero Section
 --------------------------------------------------------------*/
 .hero {
-  padding: 0;
-}
-
-.hero .carousel {
-  width: 100%;
-  min-height: calc(100vh - 90px);
-  padding: 0;
-  margin: 0;
-  background-color: var(--background-color);
   position: relative;
-}
-
-@media (max-width: 1200px) {
-  .hero .carousel {
-    min-height: calc(100vh - 66px);
-  }
-}
-
-.hero img {
-  position: absolute;
-  inset: 0;
-  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.hero .carousel-item {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  overflow: hidden;
-}
-
-.hero .carousel-item:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 50%);
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-}
-
-.hero .carousel-container {
-  position: absolute;
-  inset: 90px 64px 64px 64px;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  z-index: 3;
+  text-align: center;
+  background: linear-gradient(to bottom, black, white);
+  overflow: hidden;
 }
 
+/* Cube Styles (White Outline Only) */
+.cube {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 2px solid white; /* White outline */
+  background-color: transparent; /* Transparent background */
+  animation: bounceAround 4s infinite linear, rotateCube 4s infinite linear;
+  z-index: 1;
+}
+
+/* Cube Bouncing Around within the Section */
+@keyframes bounceAround {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(200px, 100px, 0);
+  }
+  50% {
+    transform: translate3d(400px, 300px, 0);
+  }
+  75% {
+    transform: translate3d(100px, 400px, 0);
+  }
+  100% {
+    transform: translate3d(300px, 100px, 0);
+  }
+}
+
+/* Rotate Animation */
+@keyframes rotateCube {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hero Content - Centering */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  background: linear-gradient(to right, #F2CA2C, #FF00FF);
+  -webkit-background-clip: text;
+  background-clip: text; /* Gradient text */
+}
+
+/* Heading Styling */
 .hero h2 {
-  margin-bottom: 30px;
   font-size: 48px;
-  font-weight: 700;
+  font-weight: bold;
+  margin-bottom: 20px;
   animation: fadeInDown 1s both;
+  background: linear-gradient(to right, #F2CA2C, #FF00FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Makes the text show the gradient */
 }
 
-@media (max-width: 768px) {
-  .hero h2 {
-    font-size: 30px;
-  }
-}
-
+/* Subheading Styling */
 .hero p {
+  font-size: 20px;
+  margin-bottom: 30px;
   animation: fadeInDown 1s both 0.2s;
+  background: linear-gradient(to right, #F2CA2C, #FF00FF);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent; /* Makes the text show the gradient */
 }
 
-@media (min-width: 1024px) {
-
-  .hero h2,
-  .hero p {
-    max-width: 60%;
-  }
-}
-
+/* Get Started Button */
 .hero .btn-get-started {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  background: black;
   font-family: var(--heading-font);
-  font-weight: 500;
+  font-weight: bold;
   font-size: 15px;
   letter-spacing: 1px;
-  display: inline-block;
-  padding: 8px 32px;
+  padding: 10px 32px;
   border-radius: 4px;
   transition: 0.5s;
-  margin: 10px;
   animation: fadeInUp 1s both 0.4s;
+  display: inline-block;
 }
 
 .hero .btn-get-started:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: var(--linear-gradient);
+  color: black;
 }
 
-.hero .carousel-control-prev,
-.hero .carousel-control-next {
-  width: 10%;
-  transition: 0.3s;
-  opacity: 0.5;
-}
-
-.hero .carousel-control-prev:focus,
-.hero .carousel-control-next:focus {
-  opacity: 0.5;
-}
-
-.hero .carousel-control-prev:hover,
-.hero .carousel-control-next:hover {
-  opacity: 0.9;
-}
-
-@media (min-width: 1024px) {
-
-  .hero .carousel-control-prev,
-  .hero .carousel-control-next {
-    width: 5%;
-  }
-}
-
-.hero .carousel-control-next-icon,
-.hero .carousel-control-prev-icon {
-  font-size: 32px;
-  line-height: 1;
-}
-
-.hero .carousel-indicators {
-  list-style: none;
-}
-
-.hero .carousel-indicators li {
-  cursor: pointer;
-}
-
+/* Keyframe Animations */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translate3d(0, 100%, 0);
+    transform: translateY(100%);
   }
-
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: translateY(0);
   }
 }
 
 @keyframes fadeInDown {
   from {
     opacity: 0;
-    transform: translate3d(0, -100%, 0);
+    transform: translateY(-100%);
   }
-
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: translateY(0);
   }
 }
 
+/* Minor Animation for Hero Background */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 40%;
+  z-index: 0;
+}
+
+/*--------------------------------------------------------------
+# How It Works Section
+--------------------------------------------------------------*/
+
+/* Styling for the How It Works section */
+.how-it-works {
+  text-align: center;
+  padding: 50px;
+  background: linear-gradient(to bottom, #ffffff, #F2CA2C);
+}
+
+/* Styling for the section title */
+.how-it-works h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: black;
+  font-weight: bolder;
+}
+
+/* Container for steps, using flexbox for alignment */
+.steps-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Styling for each individual step */
+.step {
+  max-width: 300px;
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image styling inside each step */
+.step img {
+  width: 50px;
+  margin-bottom: 15px;
+}
+
+/* Step title styling */
+.step h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+/* Step description styling */
+.step p {
+  font-size: 1em;
+  color: #666;
+}
+
+/*--------------------------------------------------------------
+# How It Works Section End
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # About Section
 --------------------------------------------------------------*/
+
+.container-section-title p {
+  background: black;
+  background-size: 200% auto;
+  background-position: left center;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin: 20px auto; /* Center the text */
+  font-size: 28px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-family: var(--heading-font);
+  text-align: center; /* Center the text */
+  display: block; /* Ensure the text behaves like a block element */
+}
+
+.about {
+  background: linear-gradient(to bottom, #F2CA2C, white); /* Gradient from yellow to white */
+  padding: 40px 0; /* Adjust padding as needed */
+}
+
+.about p {
+  color: #000000; /* Set the text color to pure black */
+}
+
+.about ul li span {
+  color: #000000; /* Ensure the list items' text is also pure black */
+}
+
 .about ul {
   list-style: none;
   padding: 0;
@@ -981,8 +1017,8 @@ section,
 }
 
 .about .read-more {
-  background: var(--accent-color);
-  color: var(--contrast-color);
+  background: black;
+  color: white;
   font-family: var(--heading-font);
   font-weight: 500;
   font-size: 16px;
@@ -1003,7 +1039,8 @@ section,
 }
 
 .about .read-more:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: var(--linear-gradient);
+  color: black;
 }
 
 .about .read-more:hover i {
@@ -1015,6 +1052,22 @@ section,
 --------------------------------------------------------------*/
 .clients {
   padding: 20px 0;
+  margin: 0; /* Remove any default margin or indentation */
+}
+
+.clients .made-using-text {
+  text-align: center;
+  color: rgb(128, 128, 128); /* Light gray color for the text */
+  font-size: 25px; /* Adjust the font size as needed */
+  margin-bottom: 20px; /* Add some space below the text */
+  font-family: Arial, sans-serif; /* Optional: Choose a font that suits the design */
+}
+
+.clients .client-logo-wrapper {
+  display: flex;
+  justify-content: space-between; /* Evenly space the logos */
+  align-items: center; /* Center logos vertically */
+  gap: 0; /* Remove any gap between logos */
 }
 
 .clients .client-logo {
@@ -1022,11 +1075,13 @@ section,
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  flex: 0 0 auto; /* Prevent images from stretching */
+  width: 7%; /* Each logo takes up 1/7 of the total width */
 }
 
 .clients .client-logo img {
-  padding: 20px 40px;
-  max-width: 90%;
+  padding: 10px 0; /* Adjust padding to ensure the logos stay proportionate */
+  max-width: 100%;
   transition: 0.3s;
   opacity: 0.5;
   filter: grayscale(100);
@@ -1039,7 +1094,11 @@ section,
 
 @media (max-width: 640px) {
   .clients .client-logo img {
-    padding: 20px;
+    padding: 10px; /* Adjust padding for mobile view */
+  }
+
+  .clients .client-logo {
+    width: 30%; /* For smaller screens, logos will take up less width */
   }
 }
 
