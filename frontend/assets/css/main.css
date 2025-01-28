@@ -78,11 +78,13 @@ a:hover {
   text-decoration: none;
 }
 
-h1 {
-  color: var(--specific-heading-color);
-  font-family: var(--heading-font)
+.h1.sitename {
+  color: white;
+  font-family: var(--heading-font);
+  font-weight: 700;
 }
 
+h1,
 h2,
 h3,
 h4,
@@ -174,8 +176,9 @@ h6 {
 
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
-  color: var(--contrast-color);
-  background: var(--accent-color);
+  color: black;
+  background: var(--specific-heading-color);
+  font-weight: bold;
   font-size: 14px;
   padding: 8px 25px;
   margin: 0 0 0 30px;
@@ -185,8 +188,8 @@ h6 {
 
 .header .btn-getstarted:hover,
 .header .btn-getstarted:focus:hover {
-  color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  color: linear-gradient(to right, #ff00ff, #F2CA2C);
+  background: linear-gradient(to right, #F2CA2C, #ff00ff);
 }
 
 .github-button {
@@ -269,7 +272,10 @@ h6 {
   .navmenu li:hover>a,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-hover-color);
+    background: linear-gradient(to right, #F2CA2C, #ff00ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .navmenu .dropdown ul {
