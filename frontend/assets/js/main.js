@@ -1,11 +1,3 @@
-/**
-* Template Name: Sailor
-* Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 (function() {
   "use strict";
 
@@ -27,12 +19,12 @@
    */
   const mobileNavToggleBtn = document.querySelector('.mobile-nav-toggle');
 
-  function mobileNavToogle() {
+  function mobileNavToggle() {
     document.querySelector('body').classList.toggle('mobile-nav-active');
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
   }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  mobileNavToggleBtn.addEventListener('click', mobileNavToggle);
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -40,7 +32,7 @@
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
       if (document.querySelector('.mobile-nav-active')) {
-        mobileNavToogle();
+        mobileNavToggle();
       }
     });
 
@@ -118,7 +110,7 @@
   /**
    * Initiate glightbox
    */
-  const glightbox = GLightbox({
+  const glightbox = glightbox({
     selector: '.glightbox'
   });
 
@@ -197,3 +189,33 @@
   window.addEventListener("load", initSwiper);
 
 })();
+
+  /**
+   * Trigger the file input field when the upload button is clicked
+   */
+  function triggerUpload() {
+    document.getElementById("fileInput").click();
+  }
+
+  // Add event listener for when a file is selected
+  document.getElementById("fileInput").addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    // Prepare the file data to send to the backend
+    const formData = new FormData();
+    formData.append("file", file);
+
+    // Send the file to the server
+    fetch("http://localhost:5000/upload", {
+      method: "POST",
+      body: formData
+    })
+      .then(response => response.text())
+      .then(data => {
+        console.log(data);
+        // Add the 'upload-active' class to change the background to light gray
+        document.querySelector(".hero-section").classList.add("upload-active");
+      })
+      .catch(error => console.error("Error:", error));
+  });

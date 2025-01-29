@@ -10,7 +10,6 @@
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -35,21 +34,19 @@
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">LEGAL INSIGHT</h1>
+        <p class="logo-sitename"  href="index.html">LEGAL INSIGHT</p>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">HOME</a></li>
+          <li><a href="index.html" class="active">HOME</a></li>
           <li><a href="about.html">ABOUT</a></li>
           <li><a href="services.html">SERVICES</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="about.html">Get Started</a>
+      <a class="btn-getstarted" href="analysis-page.html">Get Started</a>
 
       <a href="https://github.com/X0Predator/Legal-Insight" target="_blank" class="github-button">
         <img src="/D:/Code/Projects/Legal Insight/frontend/assets/img/github-mark-white.png" alt="GitHub" class="github-button" 
@@ -58,6 +55,8 @@
       </a>
     </div>
   </header>
+
+  <main class="main">
 
   <!-- Hero Section -->
   <section id="hero" class="hero section dark-background">
@@ -79,7 +78,7 @@
       <div class="hero-content">
         <h2>Revolutionize Legal Analysis using Legal Insight</h2>
         <p>Elevate your legal efficiency through AI-powered precision with Legal Insight, optimizing document analysis for superior accuracy.</p>
-        <a href="" class="btn-get-started">Get Started</a>
+        <a href="analysis-page.html" class="btn-get-started">Get Started</a>
       </div>
     </div>
   </section>
@@ -187,35 +186,45 @@ With advanced natural language processing (NLP) and machine learning algorithms,
   </div>
 </section><!-- /Clients Section -->
 
-<!-- Footer -->    
-<footer id="footer" class="footer dark-background">
+</main>
+
+  <!-- Footer -->    
+  <footer id="footer" class="footer dark-background">
+
   <div class="container footer-top">
     <div class="row gy-4 justify-content-center"> <!-- Centering the content -->
+
       <div class="col-lg-4 col-md-6 footer-about text-center">
         <a href="index.html" class="logo d-flex align-items-center justify-content-center">
           <span class="sitename">Legal-Insight</span>
         </a>
-        <div class="social-links d-flex justify-content-center mt-4"> <!-- Centering social links -->
+
+        <div class="social-links d-flex justify-content-center mt-4">
           <a href="https://github.com/X0Predator/Legal-Insight" target="_blank" class="footer-github-button">
             <img src="D:/Code/Projects/Legal Insight/frontend/assets/img/github-mark-white.png" alt="GitHub" class="footer-github-icon">
           </a>
         </div>
       </div>
+
       <div class="col-lg-2 col-md-3 footer-links text-center">
         <h4>Useful Links</h4>
         <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About us</a></li>
-          <li><a href="#">Services</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="services.html">Services</a></li>
         </ul>
       </div>
     </div>
   </div>
+
   <div class="container copyright text-center mt-4">
-    <p> <strong class="px-1 sitename">Legal-Insight</strong>  <span>MIT license</span></p>
+    <p> <strong class="bottom-sitename">Legal-Insight</strong>  
+      <a href="https://opensource.org/license/MIT" class="mit-license"><span>MIT license</span></a>
+    </p>
   </div>
-</footer>
-<!-- /Footer -->
+
+  </footer>
+  <!-- /Footer -->
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

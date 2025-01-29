@@ -1,14 +1,6 @@
-/**
-* Template Name: Sailor
-* Template URL: https://bootstrapmade.com/sailor-free-bootstrap-theme/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
 
 /*--------------------------------------------------------------
 # Font & Color Variables
-# Help: https://bootstrapmade.com/color-system/
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
@@ -56,7 +48,7 @@
 
 /* Smooth scroll */
 :root {
-  scroll-behavior: smooth;
+  scroll-behavior:  smooth;
 }
 
 /*--------------------------------------------------------------
@@ -81,27 +73,91 @@ a:hover {
 
 .sitename {
   font-family: var(--heading-font);
-  font-weight: 700;
-  background: linear-gradient(to right, #F2CA2C, #FF00FF);
-  background-size: 200% auto; /* Ensures the gradient spans more than the text width */
-  background-position: left center;
+  font-size: xx-large;
+  font-weight: 600;
+  background: linear-gradient(90deg, #F2CA2C, #FF00FF, #F2CA2C, #FF00FF); /* Repeat same colors */
+  background-size: 400% auto; /* Large width to create a smooth movement */
+  background-position: 0% center;
   -webkit-background-clip: text;
-  background-clip: text; /* Standard property for compatibility */
-  color: transparent; /* Text color will be transparent to show gradient */
-  animation: gradientMove 3s linear infinite; /* Animation for the moving gradient */
-  display: inline-block; /* To ensure the text width is auto-calculated */
-  width: 100%;
+  background-clip: text;
+  color: transparent;
+  animation: gradientMove 3s linear infinite; /* Smooth infinite animation */
   display: inline-block;
 }
 
 @keyframes gradientMove {
   0% {
-    background-position: left center;
+    background-position: 0% center;
   }
   100% {
-    background-position: right center;
+    background-position: 100% center;
   }
 }
+
+.logo-sitename {
+  font-family: var(--heading-font);
+  font-size: 2.0rem; /* Equivalent to an h1 */
+  font-weight: 600;
+  line-height: auto; /* Keeps spacing similar to h1 */
+  
+  background: linear-gradient(90deg, #F2CA2C, #FF00FF, #F2CA2C, #FF00FF); /* Repeating LED colors */
+  background-size: 400% auto; /* Large width to create smooth movement */
+  background-position: 0% center;
+  -webkit-background-clip: text; 
+  background-clip: text; /* Makes the text show the gradient */
+  color: transparent; /* Makes the text show the gradient */  
+  animation: gradientMove 5s linear infinite; /* Smooth infinite animation */
+
+  /* Key Fixes */
+  display: inline-flex; /* Keeps the flowing effect working */
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* Prevents breaking inside navbar */
+  text-transform: uppercase; /* Optional: Matches the h1 styling */
+  padding: 10px 0; /* Adds space similar to h1 */
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 100% center;
+  }
+}
+
+.bottom-sitename {
+  margin-left: 70px;
+  font-family: var(--heading-font);
+  font-size: 2.0rem; /* Equivalent to an h1 */
+  font-weight: 600;
+  line-height: auto; /* Keeps spacing similar to h1 */
+  
+  background: linear-gradient(90deg, #F2CA2C, #FF00FF, #F2CA2C, #FF00FF); /* Repeating LED colors */
+  background-size: 400% auto; /* Large width to create smooth movement */
+  background-position: 0% center;
+  -webkit-background-clip: text; 
+  background-clip: text; /* Makes the text show the gradient */
+  color: transparent; /* Makes the text show the gradient */  
+  animation: gradientMove 5s linear infinite; /* Smooth infinite animation */
+
+  /* Key Fixes */
+  display: inline-flex; /* Keeps the flowing effect working */
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* Prevents breaking inside navbar */
+  text-transform: uppercase; /* Optional: Matches the h1 styling */
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 100% center;
+  }
+}
+
 
 h1,
 h2,
@@ -490,6 +546,7 @@ h6 {
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
+
 .footer {
   color: var(--default-color);
   background-color: black;
@@ -521,11 +578,11 @@ h6 {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 50%);
   font-size: 16px;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   margin-right: 10px;
   transition: 0.3s;
+  border: none !important; /* Ensures no border */
 }
 
 .footer .social-links a:hover {
@@ -559,7 +616,7 @@ h6 {
 }
 
 .footer .footer-links ul a:hover {
-  color: var(--accent-color);
+  color: var(--linear-gradient);
 }
 
 .footer .copyright {
@@ -572,17 +629,33 @@ h6 {
   font-size: 13px;
 }
 
+/* GitHub button fix */
 .footer-github-button {
   display: inline-block;
   width: 40px;
   height: 40px;
+  border: none !important; /* Ensures NO border */
+  outline: none !important;
+  background: none; /* Removes any background */
 }
 
+/* GitHub logo fix */
 .footer-github-icon {
   width: 100%;
   height: auto;
-  transition: 0.3s ease-in-out;
+  filter: invert(0); /* Normal state: White background, black cat */
+  transition: filter 0.3s ease-in-out;
 }
+
+.mit-license {
+  font-size: 12px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+.mit-license:hover {
+  color: rgb(0, 204, 0);
+}
+
 /*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
@@ -591,8 +664,8 @@ h6 {
   inset: 0;
   z-index: 999999;
   overflow: hidden;
-  background: var(--background-color);
-  transition: all 0.6s ease-out;
+  background: rgb(0, 0, 0);
+  transition: all 4.0s ease-out;
 }
 
 #preloader:before {
@@ -601,11 +674,11 @@ h6 {
   top: calc(50% - 30px);
   left: calc(50% - 30px);
   border: 6px solid #ffffff;
-  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-color: #F2CA2C transparent #FF00FF transparent;
   border-radius: 50%;
   width: 60px;
   height: 60px;
-  animation: animate-preloader 1.5s linear infinite;
+  animation: animate-preloader 4.0s linear infinite;
 }
 
 @keyframes animate-preloader {
@@ -921,7 +994,7 @@ section,
 
 /* Styling for the section title */
 .how-it-works h2 {
-  font-size: 2em;
+  font-size: xx-large;
   margin-bottom: 20px;
   color: black;
   font-weight: bolder;
@@ -932,7 +1005,7 @@ section,
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 30px;
 }
 
 /* Styling for each individual step */
@@ -2396,10 +2469,57 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Starter Section Section
+# Analysis Section
 --------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+  text-align: center;
+  background: linear-gradient(to bottom, #ffcc33, #ff6699, #ff00ff);
+  transition: background 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Lighter background when activated */
+.hero-section.upload-active {
+  background: #dcdcdc; /* Light gray */
+}
+
+/* Title */
+.hero-title {
+  font-family: "Arial", sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 10px;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: black;
+  margin-bottom: 20px;
+}
+
+/* Button */
+.hero-button {
+  background-color: black;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.hero-button:hover {
+  background-color: white;
+  color: black;
 }
 
 /*--------------------------------------------------------------
