@@ -1,7 +1,14 @@
 {
     "cSpell.words": [
         "getstarted",
+        "glightbox",
+        "msword",
         "navmenu",
-        "sitename"
-    ]
+        "officedocument",
+        "openxmlformats",
+        "sitename",
+        "valuenow",
+        "wordprocessingml"
+    ],
+    "python.analysis.typeCheckingMode": "basic"
 }

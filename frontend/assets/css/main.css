@@ -2471,25 +2471,20 @@ section,
 /*--------------------------------------------------------------
 # Analysis Section
 --------------------------------------------------------------*/
-/* Hero Section */
-.hero-section {
+
+/* Start Section */
+.start-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 100vh;
   text-align: center;
-  background: linear-gradient(to bottom, #ffcc33, #ff6699, #ff00ff);
-  transition: background 0.3s ease-in-out; /* Smooth transition */
-}
-
-/* Lighter background when activated */
-.hero-section.upload-active {
-  background: #dcdcdc; /* Light gray */
+  background: linear-gradient(to bottom, #ffcc33, #ff6699, #ff00ff); /* Gradient background */
 }
 
 /* Title */
-.hero-title {
+.start-title {
   font-family: "Arial", sans-serif;
   font-size: 4rem;
   font-weight: bold;
@@ -2498,28 +2493,88 @@ section,
 }
 
 /* Subtitle */
-.hero-subtitle {
+.start-subtitle {
   font-size: 1.5rem;
   color: black;
   margin-bottom: 20px;
 }
 
-/* Button */
-.hero-button {
+/* Start Button */
+.start-button {
   background-color: black;
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
-  padding: 12px 30px;
+  width: 125px; /* Set the width to a specific value */
+  padding: 12px; /* Keep the padding consistent */
   border: none;
-  border-radius: 30px;
+  border-radius: 30px; /* Pill-shaped */
   cursor: pointer;
   transition: 0.3s ease-in-out;
 }
 
-.hero-button:hover {
+.start-button:hover {
+  background-color: white;
+  color: black; /* Invert colors on hover */
+}
+
+/* Upload Section */
+.upload-section {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: lightgray;
+  padding: 175px;
+  border: 2px solid #000;
+}
+
+.upload-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Upload Button */
+.upload-button {
+  display: inline-block;
+  background-color: black;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  height: auto; /* Automatically adjust to content */
+  width: auto; /* Automatically adjust to content */
+  min-width: 180px; /* Ensure enough space for text */
+  padding: 12px 30px; /* More horizontal space */
+  border: none;
+  border-radius: 30px; /* Pill-shaped */
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.upload-button:hover {
   background-color: white;
   color: black;
+  border: 2px solid black;
+}
+
+#uploadStatus {
+  padding-top: 2vh;
+  margin-bottom: 20px;
+  color: black;
+}
+
+progress {
+  width: 100%;
+  height: 20px;
+}
+
+/* Uploaded count */
+#uploadedCount {
+  margin-top: 10px;
+  color: green;
 }
 
 /*--------------------------------------------------------------

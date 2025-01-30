@@ -110,7 +110,7 @@
   /**
    * Initiate glightbox
    */
-  const glightbox = glightbox({
+  const glightbox = new glightbox({
     selector: '.glightbox'
   });
 
@@ -190,32 +190,15 @@
 
 })();
 
-  /**
-   * Trigger the file input field when the upload button is clicked
-   */
-  function triggerUpload() {
-    document.getElementById("fileInput").click();
-  }
+/** ----------------------------------------------------------------------------------------------------- */
 
-  // Add event listener for when a file is selected
-  document.getElementById("fileInput").addEventListener("change", function(event) {
-    const file = event.target.files[0];
-    if (!file) return;
+// Function to show the upload section and hide the start section
+function startUpload() {
+  document.getElementById("startSection").style.display = "none";  // Hide Start Section
+  document.getElementById("uploadSection").style.display = "flex";  // Show Upload Section
+}
 
-    // Prepare the file data to send to the backend
-    const formData = new FormData();
-    formData.append("file", file);
-
-    // Send the file to the server
-    fetch("http://localhost:5000/upload", {
-      method: "POST",
-      body: formData
-    })
-      .then(response => response.text())
-      .then(data => {
-        console.log(data);
-        // Add the 'upload-active' class to change the background to light gray
-        document.querySelector(".hero-section").classList.add("upload-active");
-      })
-      .catch(error => console.error("Error:", error));
-  });
+// Function to trigger the file input field when the upload button is clicked
+function triggerFileInput() {
+  document.getElementById("fileInput").click();  // Simulate file input click
+}

@@ -45,7 +45,6 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="analysis-page.html">Get Started</a>                               <!-- NEED TO ADD LINK TO BUTTON -->
       <a href="https://github.com/X0Predator/Legal-Insight" target="_blank" class="github-button">
         <img src="/D:/Code/Projects/Legal Insight/frontend/assets/img/github-mark-white.png" alt="GitHub" class="github-button" 
           onmouseover="this.src='D:/Code/Projects/Legal Insight/frontend/assets/img/github-mark.svg'"
@@ -59,15 +58,38 @@
 
     <!-- End Page Title -->
 
-    <!-- Analysis Section -->
-    <section class="hero-section" id="heroSection">
-      <h1 class="hero-title">AI-Powered Legal Analysis</h1>
-      <p class="hero-subtitle">Upload your Legal Documents for AI-Powered Analysis</p>
-    
-      <input type="file" id="fileInput" style="display: none;">
-      <button class="hero-button" onclick="triggerUpload()">UPLOAD</button>
-    </section>  
-    <!-- /Analysis Section -->
+    <!-- Start Section -->
+    <section class="start-section" id="startSection">
+      <h1 class="start-title">AI-Powered Legal Analysis</h1>
+      <p class="start-subtitle">Upload your Legal Documents for AI-Powered Analysis</p>
+      <button class="start-button" id="start-Button" onclick="startUpload()">Start</button>
+    </section>
+    <!-- Start Section End -->
+
+    <!-- File Upload Section (Initially Hidden) -->
+    <section class="upload-section" id="uploadSection" style="display: none;"> <!-- Hidden initially -->
+      <div class="upload-box">
+
+        <!-- Hidden File Input -->
+        <input type="file" id="fileInput" multiple style="display: none;">
+
+        <!-- Upload Button with Label (More Clickable Area) -->
+        <label for="fileInput" class="upload-button">Select Files</label>
+
+        <!-- Upload Status -->
+        <span id="uploadStatus">Upload Your Documents</span>
+
+        <!-- Progress Bar -->
+        <div class="progress-container" style="display: none;">
+          <progress id="uploadProgress" value="0" max="100"></progress>
+        </div>
+
+        <!-- File Count Display -->
+        <div id="uploadedCount" style="display: none;"></div>
+        
+      </div>
+    </section>
+    <!-- File Upload Section End -->
 
   </main>
 
@@ -122,8 +144,9 @@
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
-  <!-- Main JS File -->
+  <!-- JS Files -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/upload.js"></script>
 
 </body>
 
