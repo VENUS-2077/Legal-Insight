@@ -1,22 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LegalInsight</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Upload Legal Document</h1>
-    <form id="upload-form">
-      <input type="file" id="file-input" name="file" accept=".pdf,.docx" required>
-      <button type="submit">Upload</button>
-    </form>
 
-    <div id="results"></div>
-  </div>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>LEGAL INSIGHT</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto">
+        <p class="logo-sitename"  href="index.html">LEGAL INSIGHT</p>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="analysis-page.html">Get Started</a>
+
+      <a href="https://github.com/X0Predator/Legal-Insight" target="_blank" class="github-button">
+        <img src="/D:/Code/Projects/Legal Insight/frontend/assets/img/github-mark-white.png" alt="GitHub" class="github-button" 
+          onmouseover="this.src='D:/Code/Projects/Legal Insight/frontend/assets/img/github-mark.svg'"
+          onmouseout="this.src='/D:/Code/Projects/Legal Insight/frontend/assets/img/github-mark-white.png'">
+      </a>
+    </div>
+  </header>
+
+  <main class="main">
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero section dark-background">
+    <div class="hero-background"></div> <!-- Background with gradient -->
+    <div class="hero-container">
+      <!-- Top 4 Cubes (Above the Center) -->
+      <div class="cube" style="top: 10%; left: 15%;"></div>
+      <div class="cube" style="top: 10%; left: 40%;"></div>
+      <div class="cube" style="top: 10%; left: 65%;"></div>
+      <div class="cube" style="top: 10%; left: 90%;"></div>
+
+      <!-- Bottom 4 Cubes (Below the Center) -->
+      <div class="cube" style="top: 70%; left: 15%;"></div>
+      <div class="cube" style="top: 70%; left: 40%;"></div>
+      <div class="cube" style="top: 70%; left: 65%;"></div>
+      <div class="cube" style="top: 70%; left: 90%;"></div>
+
+      <!-- Hero Content (Centered) -->
+      <div class="hero-content">
+        <h2>Revolutionize Legal Analysis using Legal Insight</h2>
+        <p>Elevate your legal efficiency through AI-powered precision with Legal Insight, optimizing document analysis for superior accuracy.</p>
+        <a href="analysis-page.html" class="btn-get-started">Get Started</a>
+      </div>
+    </div>
+  </section>
+  <!-- /Hero Section -->
+
+  <!-- How It Works Section -->
+    <section class="how-it-works">
+      <h2>How It Works</h2>
+      <div class="steps-container">
+          <div class="step">
+            <img src="D:/Code/Projects/Legal Insight/frontend/assets/img/upload.png" alt="Upload Documents">
+              <h3>Step 1: Upload Documents</h3>
+              <p>Upload your legal documents easily to get started. Our system allows you to quickly initiate analysis, saving you time and effort in the process.</p>
+          </div>
+          <div class="step">
+            <img src="D:/Code/Projects/Legal Insight/frontend/assets/img/analyse.png" alt="Analyze with AI">
+              <h3>Step 2: Analyze with AI</h3>
+              <p>Our AI analyzes legal documents quickly. It identifies key clauses, compares terms, and detects potential risks. This allows you to focus on making informed decisions.</p>
+          </div>
+          <div class="step">
+            <img src="D:/Code/Projects/Legal Insight/frontend/assets/img/review.png" alt="Review Insights">
+              <h3>Step 3: Review Insights</h3>
+              <p>Analyze your legal documents with AI-powered insights. Identify key information and find relevant patterns. Improve decision-making and ensure compliance with our detailed review process.</p>
+          </div>
+      </div>
+    </section>
+    <!-- /How It Works Section -->
   
-  <script src="script.js"></script>
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <!-- Section Title -->
+      <div class="container-section-title" data-aos="fade-up">
+        <p>About Legal Insight<br></p>
+      </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
+            <p>
+              Legal Insight is a cutting-edge AI-powered platform designed to streamline legal operations and enhance efficiency. Our mission is to simplify document analysis, saving time and reducing errors in the legal industry.
+
+With advanced natural language processing (NLP) and machine learning algorithms, Legal Insight offers innovative solutions for a range of legal needs.
+            </p>
+            <ul>
+              <li><i class="bi bi-check2-circle"></i> <span>Automated contract analysis to quickly identify key clauses.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>AI-driven insights for better decision-making in legal cases.</span></li>
+              <li><i class="bi bi-check2-circle"></i> <span>Secure platform for seamless access and collaboration.</span></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <p>Legal Insight is revolutionizing the way legal professionals interact with documents, enabling them to focus on what truly matters. Our platform is designed to enhance productivity, reduce manual workload, and increase accuracy.
+
+              Our team of experts is constantly improving and innovating to provide the most advanced legal solutions available. Join us in transforming the legal field with the power of AI.</p>
+            <a href="about.html" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /About Section -->
+
+<!-- Clients Section -->
+<section id="clients" class="clients section light-background">
+  <div class="container" data-aos="fade-up">
+    <div class="row gy-4">
+      <div class="col-12">
+        <div class="made-using-text">Made With</div>
+        <div class="client-logo-wrapper">
+          <!-- Add 7 images here (You can replace these with the actual logos/icons) -->
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/adobe-photoshop.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/css.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/html-5.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/javascript.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/natural-language-processing.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/node-js.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+
+          <div class="col-xl-2 col-md-3 col-6 client-logo">
+            <img src="assets/img/clients/python.png" class="img-fluid" alt="">
+          </div><!-- End Client Item -->
+        </div> <!-- End client-logo-wrapper -->
+      </div>
+    </div>
+  </div>
+</section><!-- /Clients Section -->
+
+</main>
+
+  <!-- Footer -->    
+  <footer id="footer" class="footer dark-background">
+
+  <div class="container footer-top">
+    <div class="row gy-4 justify-content-center"> <!-- Centering the content -->
+
+      <div class="col-lg-4 col-md-6 footer-about text-center">
+        <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+          <span class="sitename">Legal-Insight</span>
+        </a>
+
+        <div class="social-links d-flex justify-content-center mt-4">
+          <a href="https://github.com/X0Predator/Legal-Insight" target="_blank" class="footer-github-button">
+            <img src="D:/Code/Projects/Legal Insight/frontend/assets/img/github-mark-white.png" alt="GitHub" class="footer-github-icon">
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-2 col-md-3 footer-links text-center">
+        <h4>Useful Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About us</a></li>
+          <li><a href="services.html">Services</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container copyright text-center mt-4">
+    <p> <strong class="bottom-sitename">Legal-Insight</strong>  
+      <a href="https://opensource.org/license/MIT" class="mit-license"><span>MIT license</span></a>
+    </p>
+  </div>
+
+  </footer>
+  <!-- /Footer -->
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
 </body>
+
 </html>

@@ -1,0 +1,21 @@
+{
+  "name": "legal-insight",
+  "version": "1.0.0",
+  "description": "LegalInsight is an AI-powered system for analyzing legal documents. It automates tasks like document categorization, entity extraction, clause analysis, and risk assessment. With features like detailed summaries, critical clause detection, and advanced legal database search, it helps legal professionals save time and work more efficiently. Built with NLP models, semantic search, and an intuitive interface, LegalInsight ensures accuracy and user satisfaction.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.1"
+  }
+}
