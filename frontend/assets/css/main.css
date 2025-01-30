@@ -2520,17 +2520,18 @@ section,
 
 /* Upload Section */
 .upload-section {
-  height: 60vh;
-  display: flex;
+  height: 51vh; /* Set the height to a specific value */
+  display: none; /* Ensure the upload section is hidden initially */
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: lightgray;
-  padding: 175px;
-  border: 2px solid #000;
+  padding: 130px; /* Add padding to the section */
+  border: 2px solid #000000;
 }
 
 .upload-box {
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -2543,9 +2544,10 @@ section,
   color: white;
   font-size: 1.2rem;
   font-weight: bold;
+  text-align: center;
   height: auto; /* Automatically adjust to content */
   width: auto; /* Automatically adjust to content */
-  min-width: 180px; /* Ensure enough space for text */
+  min-width: 150px; /* Ensure enough space for text */
   padding: 12px 30px; /* More horizontal space */
   border: none;
   border-radius: 30px; /* Pill-shaped */
@@ -2566,15 +2568,46 @@ section,
   color: black;
 }
 
-progress {
+.progress {
   width: 100%;
-  height: 20px;
+  height: 10px;
 }
 
 /* Uploaded count */
 #uploadedCount {
-  margin-top: 10px;
+  margin-top: 1px;
   color: green;
+}
+
+.status-box {
+  display: flex;                  /* Use flexbox for better alignment */
+  justify-content: center;        /* Horizontally center the text */
+  align-items: center;            /* Vertically center the text */
+  width: auto;                    /* Automatically adjust to content */
+  height: 50px;                   /* Set a specific height for the box */
+  line-height: 50px;               /* Make sure the text is vertically centered */
+  padding: 10px 20px;             /* Add padding for space around text */
+  text-align: center;             /* Center the text */
+  font-size: 18px;                /* Larger text */
+  font-weight: bolder;              /* Bold text */
+  color: white;                 /* White text color */
+  background-color: #000000;    /* Darker gray background */
+  border-radius: 10px;            /* Rounded corners */
+  margin-top: 10px;               /* Add space between the progress bar and status box */
+}
+
+
+.status-box.processing {
+  background-color: yellow;
+  color: black;
+}
+
+.status-box.completed {
+  background-color: green;
+}
+
+.status-box.error {
+  background-color: red;
 }
 
 /*--------------------------------------------------------------

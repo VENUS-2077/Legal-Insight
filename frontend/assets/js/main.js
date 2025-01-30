@@ -194,6 +194,7 @@
 
 // Function to show the upload section and hide the start section
 function startUpload() {
+  console.log("Start upload function triggered");  // Debugging
   document.getElementById("startSection").style.display = "none";  // Hide Start Section
   document.getElementById("uploadSection").style.display = "flex";  // Show Upload Section
 }

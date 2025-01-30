@@ -52,6 +52,7 @@
       </a>
     </div>
   </header>
+
   <main class="main">
 
     <!-- Page Title -->
@@ -67,9 +68,8 @@
     <!-- Start Section End -->
 
     <!-- File Upload Section (Initially Hidden) -->
-    <section class="upload-section" id="uploadSection" style="display: none;"> <!-- Hidden initially -->
+    <section class="upload-section" id="uploadSection">
       <div class="upload-box">
-
         <!-- Hidden File Input -->
         <input type="file" id="fileInput" multiple style="display: none;">
 
@@ -86,10 +86,20 @@
 
         <!-- File Count Display -->
         <div id="uploadedCount" style="display: none;"></div>
-        
       </div>
+
+      <!-- Text Processing -->
+      <div id="parsing-status" class="status-box">
+        <p id="status-text">Waiting For Document...</p>
+      </div>
+
+      <!-- Insight Generation -->
+      <!-- Insight Generation End -->
+
+      <!-- Summarization -->
+      <!-- Summarization End -->
     </section>
-    <!-- File Upload Section End -->
+
 
   </main>
 

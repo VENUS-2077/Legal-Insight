@@ -6,6 +6,7 @@
         "navmenu",
         "officedocument",
         "openxmlformats",
+        "pdfminer",
         "sitename",
         "valuenow",
         "wordprocessingml"
