@@ -6,11 +6,10 @@ LegalInsight is an AI-powered system for analyzing legal documents. It automates
 
 - Document categorization
 - Entity extraction
-- Clause analysis
-- Risk assessment
-- Detailed summaries
+- Clause analysis & Risk assessment
+- Insights Generation
+- Document Summarization
 - Critical clause detection
-- Advanced legal database search
 
 ## License
 
