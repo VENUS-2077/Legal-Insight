@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 /* Fonts */
 :root {
-  --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --default-font: "Poppins",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Raleway",  sans-serif;
   --nav-font: "Poppins",  sans-serif;
 }
@@ -100,12 +100,12 @@ a:hover {
   line-height: auto; /* Keeps spacing similar to h1 */
   
   background: linear-gradient(90deg, #F2CA2C, #FF00FF, #F2CA2C, #FF00FF); /* Repeating LED colors */
-  background-size: 400% auto; /* Large width to create smooth movement */
+  background-size: 400% auto; /* Lrge width to create smooth movement */
   background-position: 0% center;
   -webkit-background-clip: text; 
   background-clip: text; /* Makes the text show the gradient */
   color: transparent; /* Makes the text show the gradient */  
-  animation: gradientMove 5s linear infinite; /* Smooth infinite animation */
+  animation: gradientMove 5s linear infinite; /* Smooth infainite animation */
 
   /* Key Fixes */
   display: inline-flex; /* Keeps the flowing effect working */
@@ -1119,6 +1119,44 @@ section,
   .clients .client-logo {
     width: 30%; /* For smaller screens, logos will take up less width */
   }
+}
+/*--------------------------------------------------------------
+# Track Your Work Flow Section
+--------------------------------------------------------------*/
+.track-workflow-section {
+  background: #F2CA2C;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 0;
+}
+
+.track-workflow-section h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.track-workflow-section p {
+  color: black;
+  font-size: 1.2rem;
+}
+
+.track-workflow-section .btn-get-started {
+  background: black;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 32px;
+  border-radius: 4px;
+  transition: 0.5s;
+  margin-top: 20px;
+}
+
+.track-workflow-section .btn-get-started:hover {
+  background: white;
+  color: black;
 }
 
 /*--------------------------------------------------------------
