@@ -32,22 +32,29 @@ function uploadFile(file) {
   xhr.onload = function () {
     if (xhr.status === 200) {
       const response = JSON.parse(xhr.responseText);
-      uploadStatus.textContent = response.message;
-      totalUploaded++;
-      uploadedCount.textContent = `Total Documents Uploaded: ${totalUploaded}`;
-      uploadedCount.style.display = "block";
+      // Introduce delay before updating status text
+      setTimeout(() => {
+        uploadStatus.textContent = response.message;
+        totalUploaded++;
+        uploadedCount.textContent = `Total Documents Uploaded: ${totalUploaded}`;
+        uploadedCount.style.display = "block";
 
-      // Automatically start document parsing
-      startParsing();
+        // Automatically start document parsing with delay
+        setTimeout(() => startParsing(), 500); // Add delay before starting parsing
+      }, 500);  // Delay for upload completion status
     } else {
-      // Handle error from backend
-      uploadStatus.textContent = `Upload failed with status: ${xhr.status}`;
+      // Handle error from backend with delay
+      setTimeout(() => {
+        uploadStatus.textContent = `Upload failed with status: ${xhr.status}`;
+      }, 500);
     }
   };
 
   // Handle network error
   xhr.onerror = function () {
-    uploadStatus.textContent = "Network error! Please try again. The server might be down.";
+    setTimeout(() => {
+      uploadStatus.textContent = "Network error! Please try again. The server might be down.";
+    }, 500);
     console.error("Network error:", xhr.status, xhr.statusText);
   };
 
@@ -58,21 +65,29 @@ function uploadFile(file) {
 // Function to start document parsing
 function startParsing() {
   statusBox.classList.add("processing");
-  statusText.textContent = "Reading documents...";
+  setTimeout(() => {
+    statusText.textContent = "Reading documents...";
+  }, 500); // Delay before showing "Reading documents..."
 
   // Call the parsing endpoint
   fetch("http://localhost:5000/parse", { method: "POST" })
     .then((response) => response.json())
     .then((data) => {
-      statusText.textContent = "Parsing Completed!";
-      statusBox.classList.remove("processing");
-      statusBox.classList.add("completed");
-      console.log(data);
+      // Delay before showing "Parsing Completed!"
+      setTimeout(() => {
+        statusText.textContent = "Parsing Completed!";
+        statusBox.classList.remove("processing");
+        statusBox.classList.add("completed");
+        console.log(data);
+      }, 1000); // Add a delay before showing parsing completion
     })
     .catch((error) => {
-      statusText.textContent = "Error parsing documents!";
-      statusBox.classList.remove("processing");
-      statusBox.classList.add("error");
+      // Handle error with delay
+      setTimeout(() => {
+        statusText.textContent = "Error parsing documents!";
+        statusBox.classList.remove("processing");
+        statusBox.classList.add("error");
+      }, 500);
       console.error("Parsing error:", error);
     });
 }
@@ -82,7 +97,9 @@ fileInput.addEventListener("change", function (event) {
   const files = event.target.files;
   if (files.length === 0) return;
 
-  // Upload each file
-  Array.from(files).forEach(uploadFile);
+  // Upload each file with a delay
+  Array.from(files).forEach((file, index) => {
+    setTimeout(() => uploadFile(file), index * 1000); // Delay each file upload by 1 second
+  });
   fileInput.value = "";  // Reset file input after selection
 });

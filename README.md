@@ -21,6 +21,10 @@ To get started with LegalInsight, follow these steps:
 - Critical clause detection
 - Advanced legal database search
 
+## Project Requirements
+
+
+
 ## License
 
 LegalInsight is released under the [MIT License](https://opensource.org/licenses/MIT).
