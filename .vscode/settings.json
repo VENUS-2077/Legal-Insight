@@ -2,6 +2,7 @@
     "cSpell.words": [
         "getstarted",
         "glightbox",
+        "Lrge",
         "msword",
         "navmenu",
         "officedocument",
@@ -9,8 +10,10 @@
         "pdfminer",
         "pdfplumber",
         "sitename",
+        "tika",
         "valuenow",
         "wordprocessingml"
     ],
-    "python.analysis.typeCheckingMode": "basic"
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.autoImportCompletions": true
 }
