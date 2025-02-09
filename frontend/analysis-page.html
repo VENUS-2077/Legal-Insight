@@ -58,47 +58,87 @@
 
     <!-- End Page Title -->
 
-    <!-- Start Section -->
-    <section class="start-section" id="startSection">
-      <h1 class="start-title">AI-Powered Legal Analysis</h1>
-      <p class="start-subtitle">Upload your Legal Documents for AI-Powered Analysis</p>
-      <button class="start-button" id="start-Button" onclick="startUpload()">Start</button>
-    </section>
-    <!-- Start Section End -->
+<!-- Start Section -->
+<section class="start-section" id="startSection">
+  <h1 class="start-title">AI-Powered Legal Analysis</h1>
+  <p class="start-subtitle">Upload your Legal Documents for AI-Powered Analysis</p>
+  <button class="start-button" id="start-Button" onclick="startUpload()">Start</button>
+</section>
+<!-- Start Section End -->
 
-    <!-- File Upload Section (Initially Hidden) -->
-    <section class="upload-section" id="uploadSection">
-      <div class="upload-box">
-        <!-- Hidden File Input -->
-        <input type="file" id="fileInput" multiple style="display: none;">
+<!-- File Upload Section (Initially Hidden) -->
+<section class="upload-section" id="uploadSection">
+  <div class="upload-box">
+    <!-- Hidden File Input -->
+    <input type="file" id="fileInput" multiple style="display: none;">
 
-        <!-- Upload Button with Label (More Clickable Area) -->
-        <label for="fileInput" class="upload-button">Select Files</label>
+    <!-- Upload Button with Label (More Clickable Area) -->
+    <label for="fileInput" class="upload-button">Select Files</label>
 
-        <!-- Upload Status -->
-        <span id="uploadStatus">Upload Your Documents</span>
+    <!-- Upload Status -->
+    <span id="uploadStatus">Upload Your Documents</span>
 
-        <!-- Progress Bar -->
-        <div class="progress-container" style="display: none;">
-          <progress id="uploadProgress" value="0" max="100"></progress>
-        </div>
+    <!-- Progress Bar -->
+    <div class="progress-container" style="display: none;">
+      <progress id="uploadProgress" value="0" max="100"></progress>
+    </div>
 
-        <!-- File Count Display -->
-        <div id="uploadedCount" style="display: none;"></div>
-      </div>
+    <!-- File Count Display -->
+    <div id="uploadedCount" style="display: none;"></div>
+  </div>
 
-      <!-- Text Processing -->
-      <div id="parsing-status" class="status-box">
-        <p id="status-text">Waiting For Document...</p>
-      </div>
+  <!-- Text Processing -->
+  <div id="parsing-status" class="status-box processing">
+    <p id="status-text">Waiting For Document...</p>
+  </div>
+</section>
 
-      <!-- Insight Generation -->
-      <!-- Insight Generation End -->
+<!-- NLP Analysis & Summarization Section (Initially Hidden) -->
+<section>
+  <div class="nlp-section" id="nlpSection" style="display: none;">
+    <h2>NLP Analysis & Insights</h2>
+    <div class="nlp-insights">
+      <p><strong>Extracted Entities:</strong> Bangalore Mirror, Anamika Vineeth, Dayananda Sagar University, Kannur, Kerala, etc.</p>
+      <p><strong>Sentiment:</strong> Neutral with emphasis on social issues.</p>
+      <p><strong>Key Topics:</strong> Student suicide, harassment allegations, educational policies.</p>
+    </div>
+    <h2>Summarization</h2>
+    <div class="summarization">
+      <p>
+        A 19-year-old student from Dayananda Sagar University allegedly faced harassment from college authorities,
+        which contributed to her tragic suicide. The case has sparked widespread debates over campus policies and
+        administrative practices. Additional context on alleged irregularities in teacher appointments at VTU has also
+        raised concerns over institutional accountability.
+      </p>
+    </div>
+  </div>
+</section>
 
-      <!-- Summarization -->
-      <!-- Summarization End -->
-    </section>
+<!-- JavaScript to Show NLP Section After Parsing Completes -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  // Poll the parser status every 500ms
+  var intervalId = setInterval(function () {
+    var statusTextElem = document.getElementById("status-text");
+    if (statusTextElem) {
+      var currentStatus = statusTextElem.innerText.trim();
+      if (currentStatus === "Parsing Completed!") {
+        // Show the NLP Analysis & Summarization section
+        document.getElementById("nlpSection").style.display = "block";
+        
+        // Update the status box style: remove processing, add completed
+        var statusBox = document.getElementById("parsing-status");
+        statusBox.classList.remove("processing");
+        statusBox.classList.add("completed");
+        
+        // Stop checking once the condition is met
+        clearInterval(intervalId);
+      }
+    }
+  }, 500); // Checks every 500ms; adjust as needed.
+});
 
+</script>
 
   </main>
 
