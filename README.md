@@ -11,8 +11,4 @@ LegalInsight is an AI-powered system for analyzing legal documents. It automates
 - Document Summarization
 - Critical clause detection
 
-## License
-
-LegalInsight is released under the [MIT License](https://opensource.org/licenses/MIT).
-
 STILL IN DEVELOPMENT , CURRENTLY NOT WORKING (lastest working brach - new-branch)
